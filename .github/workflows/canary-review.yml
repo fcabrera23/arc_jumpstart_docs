@@ -7,16 +7,27 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
+    
+    - name: Get all changed markdown files
+      id: changed-markdown-files
+      uses: tj-actions/changed-files@v40
+      with:
+        # Avoid using single or double quotes for multiline patterns
+        files: |
+           **.md
 
-    - name: Get changed files
-      id: changed_files
-      uses: tj-actions/changed-files@v32.1.0
+    - name: List all changed files markdown files
+      if: steps.changed-markdown-files.outputs.any_changed == 'true'
+      run: |
+        for file in ${{ steps.changed-markdown-files.outputs.all_changed_files }}; do
+          echo "$file was changed"
+        done
 
     - name: Calculate changed files to pass to Vale
       id: calc_changed_files
       run: |
         beginning='["'
-        middle=$(echo ${{ steps.changed_files.outputs.all_changed_files }} | sed 's/ /", "/g')
+        middle=$(echo ${{ steps.changed-markdown-files.outputs.all_changed_files }} | sed 's/ /", "/g')
         end='"]'
         echo "files_to_change=$beginning$middle$end" >> $GITHUB_ENV
 
