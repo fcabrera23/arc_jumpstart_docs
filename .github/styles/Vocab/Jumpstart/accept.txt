@@ -19,9 +19,7 @@ Dapr
 Blazor
 jumpstart
 onboarding
-arc
 failover
 metricsui
 ARO
-aro
 onboards
