@@ -8,8 +8,6 @@ rollout
 Datacenter
 azuredeploy
 subnet
-aks
-aksrepo
 API
 APIs
 AKS
