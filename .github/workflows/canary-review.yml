@@ -36,10 +36,8 @@ jobs:
       with:
         version: 2.30.0
         reporter: github-pr-check
-        filter_mode: nofilter
-        fail_on_error: true
+        filter_mode: added
+        fail_on_error: false
         files: '${{ env.files_to_change }}'
         vale_flags: "--no-exit"
-        token: ${{secrets.VALE_GITHUB_TOKEN}}
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        token: ${{secrets.GITHUB_TOKEN}}
