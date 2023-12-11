@@ -1,10 +1,33 @@
-name: Canary Review PR Trigger
+name: Vale Linting - PR Review
 on: [pull_request]
 
 jobs:
-  vale:
-    name: runner / vale
+  lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: errata-ai/vale-action@reviewdog
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Get changed files
+      id: changed_files
+      uses: tj-actions/changed-files@v32.1.0
+
+    - name: Calculate changed files to pass to Vale
+      id: calc_changed_files
+      run: |
+        beginning='["'
+        middle=$(echo ${{ steps.changed_files.outputs.all_changed_files }} | sed 's/ /", "/g')
+        end='"]'
+        echo "files_to_change=$beginning$middle$end" >> $GITHUB_ENV
+
+    - name: Vale
+      uses: errata-ai/vale-action@reviewdog
+      with:
+        version: 2.17.0
+        reporter: github-pr-check
+        filter_mode: nofilter
+        fail_on_error: false
+        files: '${{ env.files_to_change }}'
+        vale_flags: "--no-exit"
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
