@@ -36,7 +36,7 @@ jobs:
       with:
         version: 2.30.0
         reporter: github-pr-check
-        filter_mode: added
+        filter_mode: nofilter
         fail_on_error: false
         files: '${{ env.files_to_change }}'
         vale_flags: "--no-exit"
