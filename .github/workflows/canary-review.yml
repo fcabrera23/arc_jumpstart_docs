@@ -34,11 +34,12 @@ jobs:
     - name: Vale
       uses: errata-ai/vale-action@reviewdog
       with:
-        version: 2.17.0
+        version: 2.30.0
         reporter: github-pr-check
         filter_mode: nofilter
-        fail_on_error: false
+        fail_on_error: true
         files: '${{ env.files_to_change }}'
         vale_flags: "--no-exit"
+        token: ${{secrets.VALE_GITHUB_TOKEN}}
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
