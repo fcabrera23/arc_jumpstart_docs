@@ -10,9 +10,9 @@ description: >
 
 The following Jumpstart scenario will guide you on how to deploy a "Ready to Go" environment so you can start using [a self-hosted Azure API Management Gateway](https://learn.microsoft.com/azure/api-management/how-to-deploy-self-hosted-gateway-azure-arc) deployed on an [Azure Kubernetes Service (AKS)](https://learn.microsoft.com/azure/aks/intro-kubernetes) cluster that has been onboarded as an [Azure Arc-enabled Kubernetes cluster](https://learn.microsoft.com/azure/azure-arc/kubernetes/overview) using an [Azure ARM Template](https://learn.microsoft.com/azure/azure-resource-manager/templates/overview).
 
-By the end of this scenario, you will have an AKS cluster deployed with an Azure API Management gateway, a backend API and a Microsoft Windows Server 2022 (Datacenter) Azure VM, installed & pre-configured with all the required tools needed to work with the Azure API Management gateway.
+By the end of this scenario, you will have an AKS cluster deployed with an Azure API Management gateway, a REST API and a Microsoft Windows Server 2022 (Datacenter) Azure VM, installed & pre-configured with all the required tools needed to work with the Azure API Management gateway.
 
-> **Note:** Currently, API Management self-hosted gateway on Azure Arc is in preview. The deployment time for this scenario can take ~60-90 minutes.
+> **Note:** Currently, API Management self-hosted gateway on Azure Arc is in preview. The deployment time for this scenario can take from 60 to 90 minutes.
 
 ## Prerequisites
 
@@ -83,7 +83,7 @@ By the end of this scenario, you will have an AKS cluster deployed with an Azure
 
     > **Note:** If you create multiple subsequent role assignments on the same service principal, your client secret (password) will be destroyed and recreated each time. Therefore, make sure you grab the correct password.
 
-    > **Note:** The Jumpstart scenarios are designed with as much ease of use in-mind and adhering to security-related best practices whenever possible. It is optional but highly recommended to scope the service principal to a specific [Azure subscription and resource group](https://learn.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) as well considering using a [less privileged service principal account](https://learn.microsoft.com/azure/role-based-access-control/best-practices).
+    > **Note:** The Jumpstart scenarios are designed with as much ease of use in-mind and adhering to security-related best practices whenever possible. It's optional but highly recommended to scope the service principal to a specific [Azure subscription and resource group](https://learn.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) as well considering using a [less privileged service principal account](https://learn.microsoft.com/azure/role-based-access-control/best-practices).
 
 ## Automation Flow
 
@@ -96,13 +96,13 @@ For you to get familiar with the automation and deployment flow, below is an exp
   - [_clientVm_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_app_services_jumpstart/aks/ARM/clientVm.json) - Deploys the client Windows VM. This is where all user interactions with the environment are made from.
   - [_logAnalytics_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_app_services_jumpstart/aks/ARM/logAnalytics.json) - Deploys Azure Log Analytics workspace to support Azure API Management logs uploads.
 
-- User remotes into client Windows VM, which automatically kicks off the [_AppServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_app_services_jumpstart/aks/ARM/artifacts/AppServicesLogonScript.ps1) PowerShell script that deploy the AKS cluster and will configureAzure Arc-enabled app services Kubernetes environment on the AKS cluster.
+- User remotes into client Windows VM, which automatically kicks off the [_AppServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_app_services_jumpstart/aks/ARM/artifacts/AppServicesLogonScript.ps1) PowerShell script that deploy the AKS cluster and will configure Azure Arc-enabled app services Kubernetes environment on the AKS cluster.
 
     > **Note:** Notice the AKS cluster will be deployed via the PowerShell script automation.
 
 ## Deployment
 
-> **Note:** The deployment time for this scenario can take ~60-90 minutes.
+> **Note:** The deployment time for this scenario can take from 60 to 90 minutes.
 
 As mentioned, this deployment will leverage ARM templates. You will deploy a single template that will initiate the entire automation for this scenario.
 
@@ -150,7 +150,7 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
     --parameters azuredeploy.parameters.json
     ```
 
-    > **Note:** If you receive an error message stating that the requested VM size is not available in the desired location (as an example: 'Standard_D8s_v3'), it means that there is currently a capacity restriction for that specific VM size in that particular region. Capacity restrictions can occur due to various reasons, such as high demand or maintenance activities. Microsoft Azure periodically adjusts the available capacity in each region based on usage patterns and resource availability. To continue deploying this scenario, please try to re-run the deployment using another region.
+    > **Note:** If you receive an error message stating that the requested VM size isn't available in the desired location (as an example: 'Standard_D8s_v3'), it means that there is currently a capacity restriction for that specific VM size in that particular region. Capacity restrictions can occur due to various reasons, such as high demand or maintenance activities. Microsoft Azure periodically adjusts the available capacity in each region based on usage patterns and resource availability. To continue deploying this scenario, please try to re-run the deployment using another region.
 
 - Once Azure resources has been provisioned, you will be able to see it in Azure portal. At this point, the resource group should have **7 various Azure resources** deployed.
 
