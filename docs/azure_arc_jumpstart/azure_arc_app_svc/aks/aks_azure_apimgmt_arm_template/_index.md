@@ -167,7 +167,7 @@ Various options are available to connect to _Arc-App-Client_ VM, depending on th
 
 ### Connecting directly with RDP
 
-By design, port 3389 is not allowed on the network security group. Therefore, you must create an NSG rule to allow inbound 3389.
+By design, port 3389 isn't allowed on the network security group. Therefore, you must create an NSG rule to allow inbound 3389.
 
 - Open the _Arc-App-Client-NSG_ resource in Azure portal and click "Add" to add a new rule.
 
@@ -205,7 +205,7 @@ If you already have [Microsoft Defender for Cloud](https://learn.microsoft.com/a
 
 - At first login, as mentioned in the "Automation Flow" section above, the [_AppServicesLogonScript_](https://github.com/microsoft/azure_arc/blob/main/azure_arc_app_services_jumpstart/aks/ARM/artifacts/AppServicesLogonScript.ps1) PowerShell logon script will start it's run.
 
-- Let the script to run its course and **do not close** the PowerShell session, this will be done for you once completed. Once the script will finish it's run, the logon script PowerShell session will be closed, the Windows wallpaper will change and the Azure web application will be deployed on the cluster and be ready to use.
+- Let the script to run its course and **don't close** the PowerShell session, this will be done for you once completed. Once the script will finish it's run, the logon script PowerShell session will be closed, the Windows wallpaper will change and the Azure web application will be deployed on the cluster and be ready to use.
 
     > **Note:** As you will notices from the screenshots below, during the Azure Arc-enabled app services environment, the _log-processor_ service pods will be restarted and will go through multiple Kubernetes pod lifecycle stages. This is normal and can safely be ignored. To learn more about the various Azure Arc-enabled app services Kubernetes components, visit the [Azure documentation page](https://learn.microsoft.com/azure/app-service/overview-arc-integration#pods-created-by-the-app-service-extension).
 
