@@ -1,4 +1,4 @@
-name: Vale Linting - PR Review
+name: Vale Linting and PR Review
 on: [pull_request]
 
 jobs:
@@ -12,7 +12,6 @@ jobs:
       id: changed-markdown-files
       uses: tj-actions/changed-files@v40
       with:
-        # Avoid using single or double quotes for multiline patterns
         files: |
            **.md
 
