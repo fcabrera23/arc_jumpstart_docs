@@ -113,11 +113,11 @@ As mentioned, this deployment will leverage ARM templates. You will deploy a sin
   - _`windowsAdminUsername`_ - Client Windows VM Administrator username
   - _`windowsAdminPassword`_ - Client Windows VM Password. Password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character. The value must be between 12 and 123 characters long.
   - _`logAnalyticsWorkspaceName`_ - Unique name for the deployment log analytics workspace.
-  - _`deployAppService`_ - Boolean that sets whether or not to deploy App Service plan and a Web App. For this scenario, we leave it set to *`true`*.
-  - _`deployFunction`_ - Boolean that sets whether or not to deploy App Service plan and an Azure Function application. For this scenario, we leave it set to *`false`*.
-  - _`deployAPIMgmt`_ - Boolean that sets whether or not to deploy a self-hosted Azure API Management gateway. For this scenario, we leave it set to *`false`*.
-  - _`deployLogicApp`_ - Boolean that sets whether or not to deploy App Service plan and an Azure Logic App. For this scenario, we leave it set to *`false`*.
-  - _`templateBaseUrl`_ - GitHub URL to the deployment template - filled in by default to point to [Microsoft/Azure Arc](https://aka.ms/JumpstartGitHubCode) repository, but you can point this to your forked repo as well.
+  - _`deployAppService`_ - Boolean that sets whether to deploy App Service plan and a Web App. For this scenario, default is set to *`true`*.
+  - _`deployFunction`_ - Boolean that sets whether to deploy App Service plan and an Azure Function application. For this scenario, default is set to *`false`*.
+  - _`deployAPIMgmt`_ - Boolean that sets whether to deploy a self-hosted Azure API Management gateway. For this scenario, default is set to *`false`*.
+  - _`deployLogicApp`_ - Boolean that sets whether to deploy App Service plan and an Azure Logic App. For this scenario, default is set to *`false`*.
+  - _`templateBaseUrl`_ - GitHub address to the deployment template - filled in by default to point to [Microsoft/Azure Arc](https://aka.ms/JumpstartGitHubCode) repository, but you can point this to your forked repo as well.
   - _`adminEmail`_ - an email address that will be used on the Azure API Management deployment to receive all system notifications.
   - _`deployBastion`_ - Choice (true | false) to deploy [Azure Bastion](https://learn.microsoft.com/azure/bastion/bastion-overview) or not to connect to the client VM.
   - _`bastionHostName`_ - Azure Bastion host name.
@@ -207,7 +207,7 @@ If you already have [Microsoft Defender for Cloud](https://learn.microsoft.com/a
 
 - Let the script to run its course and **don't close** the PowerShell session, this will be done for you once completed. Once the script will finish it's run, the logon script PowerShell session will be closed, the Windows wallpaper will change and the Azure web application will be deployed on the cluster and be ready to use.
 
-    > **Note:** As you will notices from the screenshots below, during the Azure Arc-enabled app services environment, the _log-processor_ service pods will be restarted and will go through multiple Kubernetes pod lifecycle stages. This is normal and can safely be ignored. To learn more about the various Azure Arc-enabled app services Kubernetes components, visit the [Azure documentation page](https://learn.microsoft.com/azure/app-service/overview-arc-integration#pods-created-by-the-app-service-extension).
+    > **Note:** As you will notices from the screenshots below, during the Azure Arc-enabled app services environment, the _log-processor_ service pods will be restarted and will go through multiple Kubernetes pod lifecycle stages. This is normal and can be ignored. To learn more about the various Azure Arc-enabled app services Kubernetes components, visit the [Azure documentation page](https://learn.microsoft.com/azure/app-service/overview-arc-integration#pods-created-by-the-app-service-extension).
 
     ![Screenshot showing PowerShell logon script run](./11.png)
 
@@ -255,19 +255,19 @@ If you already have [Microsoft Defender for Cloud](https://learn.microsoft.com/a
 
   ![Screenshot showing additional Azure resources in the resource group](./26.png)
 
-- In this scenario, **a Docker, custom container Linux-based** sample Jumpstart web application was deployed. To open the deployed web application in your web browser, simply click the App Service resource and the created URL or the Browse button.
+- In this scenario, **a Docker, custom container Linux-based** sample Jumpstart web application was deployed. To open the deployed web application in your web browser, simply click the App Service resource and the created address or the Browse button.
 
   ![Screenshot showing App Service resource in a resource group](./27.png)
 
-  ![Screenshot showing the web application URL](./28.png)
+  ![Screenshot showing the web application address](./28.png)
 
   ![Screenshot showing the web application open in a web browser](./29.png)
 
 ## Cluster extensions
 
-In this scenario, the Azure Arc-enabled app services cluster extension was deployed and used throughout this scenario in order to deploy the app services infrastructure.
+In this scenario, the Azure Arc-enabled app services cluster extension was deployed and used throughout this scenario to deploy the app services infrastructure.
 
-- In order to view cluster extensions, click on the Azure Arc-enabled Kubernetes resource Extensions settings.
+- To view cluster extensions, click on the Azure Arc-enabled Kubernetes resource Extensions settings.
 
   ![Screenshot showing the Azure Arc-enabled Kubernetes resource](./30.png)
 
