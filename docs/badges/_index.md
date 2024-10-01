@@ -8,8 +8,6 @@ weight: 7
 
 Jumpstart Community Badges are a recognition system designed to celebrate and reward active participation and contributions within the Jumpstart community. They help foster engagement and acknowledge members’ efforts in various activities and initiatives.
 
-### The Jumpstart Badges
-
 | Badge         | Name          | Description   | How to earn it   | Tiers         |
 | ------------- | ------------- | ------------- | -----------------| ------------- |
 | ![Scenario_Sorcerer_level_1](./Scenario_Sorcerer_level_1.png) | Scenario Sorcerer | Jumpstart Scenario Contributor | A contirbutor of Jumpstart Scenarios. | ⭐ 1 Jumpstart Scenario contribution <br/> ⭐⭐ 3 Jumpstart Scenario contributions <br/> ⭐⭐⭐ 5 Jumpstart Scenario contributions  |
@@ -22,9 +20,10 @@ Jumpstart Community Badges are a recognition system designed to celebrate and re
 | ![Treasure_Hunter](./Treasure_Hunter.png) | Treasure Hunter | Jumpstart diagrams collaborator | A contributor who worked with the team on an existing or new published architecture diagram  | One-time badge  |
 | ![Code_Whisperer](./Code_Whisperer.png) | Code Whisperer | Jumpstart maintainer | A Jumpstart core maintainer and an official team member. | One-time badge  |
 
-### Apply for a Jumpstart Community Badge
+#### Apply for a Jumpstart Community Badge
 
 You can apply for a Jumpstart Community Badge using this for: https://aka.ms/JumpstartBadgesForm
+<br/>
 <br/>
 
 ## Frequently Asked Questions (FAQ)
