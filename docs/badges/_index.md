@@ -25,8 +25,6 @@ Jumpstart Community Badges are a recognition system designed to celebrate and re
 ### Apply for a Jumpstart Community Badge
 
 You can apply for a Jumpstart Community Badge using this for: https://aka.ms/JumpstartBadgesForm
-
-<br/>
 <br/>
 
 ## Frequently Asked Questions (FAQ)
