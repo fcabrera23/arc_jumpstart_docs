@@ -4,10 +4,7 @@ title: "Jumpstart Community Badges"
 linkTitle: "Jumpstart Community Badges"
 weight: 7
 ---
-
-## Jumpstart Community Badges
-
-**Welcome to Jumpstart Community Badges!**
+## Welcome to Jumpstart Community Badges!
 
 Jumpstart Community Badges are a recognition system designed to celebrate and reward active participation and contributions within the Jumpstart community. They help foster engagement and acknowledge members’ efforts in various activities and initiatives.
 
@@ -29,7 +26,10 @@ Jumpstart Community Badges are a recognition system designed to celebrate and re
 
 You can apply for a Jumpstart Community Badge using this for: https://aka.ms/JumpstartBadgesForm
 
-### Frequently Asked Questions (FAQ)
+<br/>
+<br/>
+
+## Frequently Asked Questions (FAQ)
 
 **What are Jumpstart Community Badges?** <br/>
 Jumpstart Community Badges are a recognition system designed to celebrate and reward active participation and contributions within the Jumpstart community.
