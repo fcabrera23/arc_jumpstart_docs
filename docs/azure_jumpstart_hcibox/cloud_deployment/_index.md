@@ -130,7 +130,7 @@ Azure Local uses a two-step process to create and register instances in Azure us
 
   ![Screenshot showing validated instance resource in Azure portal](./validated_cluster_resource.png)
 
-- Click through to submit the deployment. The instance may take some time to deploy. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the _Deployments_ tab of the instance resource. Click Refresh to get the latest status on deployment.
+- Click through to submit the deployment. The instance may take some time to deploy. If you navigate elsewhere in the Azure Portal, you can return to monitor progress on the _Deployments_ tab of the instance. Click Refresh to get the latest status on deployment.
 
   ![Screenshot showing progress of deploying instance](./cluster_deployment_progress.png)
 
