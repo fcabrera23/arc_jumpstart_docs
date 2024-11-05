@@ -8,7 +8,11 @@ description: >
 
 ## Deploy AKS cluster on Azure Local and connect it to Azure Arc using PowerShell
 
+<<<<<<< HEAD
 The following Jumpstart scenario will guide you on how to use the provided PowerShell script to deploy an [Azure Kubernetes Service (AKS)](https://learn.microsoft.com/azure/aks/intro-kubernetes) cluster on [Azure Local](https://learn.microsoft.com/azure-stack/hci/overview) and connected it as an Azure Arc cluster resource.
+=======
+The following Jumpstart scenario will guide you on how to use the provided PowerShell script to deploy an [Azure Kubernetes Service (AKS)](https://learn.microsoft.com/azure/aks/intro-kubernetes) cluster on [Azure Local](https://learn.microsoft.com/azure-stack/hci/overview) and connect it as an Azure Arc cluster resource.
+>>>>>>> 64c01e5eff60fec8ac60f8f02148282c77e1c7e4
 
 Azure Kubernetes Service on Azure Local is an implementation of AKS on-premises using hyperconverged infrastructure operating system that is delivered as an Azure service.  
 
