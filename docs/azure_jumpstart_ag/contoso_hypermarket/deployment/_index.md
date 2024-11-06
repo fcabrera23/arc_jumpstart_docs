@@ -77,6 +77,30 @@ Once automation is complete, users can immediately start enjoying the Contoso Hy
   git clone https://github.com/microsoft/azure_arc.git
   ```
 
+- Azure IoT Operations requires creating a "user_impersonation" delegated permission on Azure Key Vault for this service principal.
+
+  - Navigate to *Microsoft Entra Id* (previously known as Azure Active Directory) in the Azure portal.
+
+    ![Screenshot showing searching for Microsoft Entra ID in the Azure portal](./img/entra_id_portal.png)
+
+  - Click on "App registrations" and search for the name of the service principal you created.
+
+    ![Screenshot showing searching for the service principal in the Entra Id portal](./img/entra_id_search.png)
+
+  - Click on "API permissions" and add a new permission.
+
+    ![Screenshot showing adding a new API permission](./img/entra_id_add_permission.png)
+
+  - Select "Azure Key Vault".
+
+    ![Screenshot showing adding a new API permission](./img/entra_id_keyvault_permission.png)
+
+  - Click on "Delegated permissions" and select the "user_impersonation" permission.
+
+    ![Screenshot showing adding a new API permission](./img/entra_id_user_impersonation.png)
+
+    ![Screenshot showing added API permission](./img/entra_id_permission_added.png)
+
 ## Deployment: Bicep deployment via Azure CLI
 
 - Upgrade to latest Bicep version
