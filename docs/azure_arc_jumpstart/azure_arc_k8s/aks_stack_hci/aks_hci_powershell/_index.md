@@ -107,7 +107,7 @@ For you to get familiar with the automation and deployment flow, below is an exp
 - User is running the PowerShell script to deploy a basic DHCP AKS cluster on Azure Local and onboard onto Azure Arc. Runtime script will:
 
   - Configure the Azure Kubernetes Service cluster management services using _Set-AksHciConfig_ cmdlet.
-  - Register Azure Kubernetes Service on Azure Local with Azure ysing _Set-AksHciRegistration_ cmdlet.
+  - Register Azure Kubernetes Service on Azure Local with Azure using _Set-AksHciRegistration_ cmdlet.
   - Start the deployment of the AKS cluster management services using the _Install-AksHci_ cmdlet.
   - Retrieve the Azure Kubernetes Service cluster credentials.  
   - Create a target cluster with the number of Linux and Windows nodes specified.
