@@ -9,11 +9,11 @@ linkTitle: Deployment guide
 
 ## Overview
 
-Jumpstart Agora provides a simple deployment process using Azure Bicep and PowerShell that minimizes user interaction. This automation automatically configures the Contoso HyperMarket scenario environment, including the infrastructure, the Contoso HyperMarket AI applications, CI/CD artifacts, observability components, and cloud architecture. The diagram below details the high-level architecture that's deployed and configured as part of the automation.
+Jumpstart Agora provides a simple deployment process using Azure Bicep and PowerShell that minimizes user interaction. This automation automatically configures the Contoso Hypermarket scenario environment, including the infrastructure, the Contoso Hypermarket AI applications, CI/CD artifacts, observability components, and cloud architecture. The diagram below details the high-level architecture that's deployed and configured as part of the automation.
 
 ![Architecture diagram](./img/architecture_diagram.png)
 
-Deploying the "Contoso HyperMarket" scenario consists of the following steps (once prerequisites are met).
+Deploying the "Contoso Hypermarket" scenario consists of the following steps (once prerequisites are met).
 
   1. Deploy infrastructure - The user deploys a Bicep file that creates the infrastructure in an Azure resource group.
   2. Bicep template deploys multiple Azure resources including the Client virtual machine.
@@ -22,7 +22,7 @@ Deploying the "Contoso HyperMarket" scenario consists of the following steps (on
   5. User logs in to the _Agora-VM-Client_ Azure virtual machine.
   6. After login the _Agora-VM-Client_ PowerShell scripts automatically run that configure the infrastructure, applications and CI/CD. These scripts will take some time to run.
 
-Once automation is complete, users can immediately start enjoying the Contoso HyperMarket experience.
+Once automation is complete, users can immediately start enjoying the Contoso Hypermarket experience.
 
 ![Deployment flow architecture diagram](./img/deployment_workflow.png)
 
@@ -38,20 +38,31 @@ Once automation is complete, users can immediately start enjoying the Contoso Hy
 
 - Ensure that you have selected the correct subscription you want to deploy Agora to by using the *`az account list --query "[?isDefault]"`* command. If you need to adjust the active subscription used by az CLI, follow [this guidance](https://learn.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-subscription).
 
-- Agora must be deployed to one of the following regions. **Deploying Agora outside of these regions may result in unexpected results or deployment errors.**
+### Regions and capacity
+
+- Agora deploys multiple Azure services that are available in specific regions across the globe like Azure OpenAI and Azure IoT operations. The list of supported regions per service is always expanding as Azure grows. At the moment, Agora must be deployed to one of the following regions to make sure you have a successful deployment. **Deploying Agora outside of these regions may result in unexpected results, deployment errors as some of the services deployed might not support that region.**
 
   - East US
   - East US 2
   - West US 2
   - West US 3
+  - West Europe
 
-- **Agora requires 32 Ds-series vCPUs**. Ensure you have sufficient vCPU quota available in your Azure subscription and the region where you plan to deploy Agora. You can use the below az CLI command to check your vCPU utilization.
+> **Note:** Every subscription has different capacity restrictions and quotas so it is very critical to ensure you have sufficient vCPU quota available in your selected Azure subscription and the region where you plan to deploy Agora.
+
+- **Agora requires 32 Ds-series vCPUs and 8 Bs-series vCPUs**. You can use the below az CLI command to check your vCPU utilization.
 
   ```shell
   az vm list-usage --location <your location> --output table
   ```
 
   ![Screenshot showing az vm list-usage](./img/az_vm_list_usage.png)
+
+- Contoso Hypermarket allows an option to deploy GPU-enabled worker nodes for the K3s Kubernetes clusters. If you select that option in the parameters file, then you can select one of a pre-defined list of GPU-enabled Virtual machines based on your subscription's available quotas. You can use the below az CLI command to check your vCPU utilization.
+
+  ```shell
+  az vm list-usage --location <your location> --output table
+  ```
 
 - Register necessary Azure resource providers by running the following commands.
 
@@ -109,7 +120,7 @@ Once automation is complete, users can immediately start enjoying the Contoso Hy
   az bicep upgrade
   ```
 
-- Edit the [main.parameters.json](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_ag/contoso_hypermarket/bicep/main.parameters.json) template parameters file and supply some values for your environment.
+- Edit the [main.parameters.json](https://github.com/microsoft/azure_arc/blob/main/azure_jumpstart_ag/contoso_Hypermarket/bicep/main.parameters.json) template parameters file and supply some values for your environment.
   - _`tenantId`_ - Your Azure tenant id
   - _`windowsAdminUsername`_ - Client Windows VM Administrator username
   - _`windowsAdminPassword`_ - Client Windows VM Password. Password must have 3 of the following: 1 lower case character, 1 upper case character, 1 number, and 1 special character. The value must be between 12 and 123 characters long.
@@ -136,7 +147,7 @@ Once automation is complete, users can immediately start enjoying the Contoso Hy
   $customLocationRPOID=(az ad sp list --filter "displayname eq 'Custom Locations RP'" --query "[?appDisplayName=='Custom Locations RP'].id" -o tsv)
   ```
 
-- Now you will deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_jumpstart_ag/contoso_hypermarket/bicep) and run the below command:
+- Now you will deploy the Bicep file. Navigate to the local cloned [deployment folder](https://github.com/microsoft/azure_arc/tree/main/azure_jumpstart_ag/contoso_Hypermarket/bicep) and run the below command:
 
   ```shell
   az login
@@ -203,12 +214,12 @@ If you already have [Microsoft Defender for Cloud](https://learn.microsoft.com/a
 
   ![Screenshot showing Agora-Client-VM](./img/automation.png)
 
-- Deployment is complete! Let's begin exploring the features of Contoso HyperMarket!
+- Deployment is complete! Let's begin exploring the features of Contoso Hypermarket!
 
-  ![Screenshot showing complete deployment](./img/contoso_hypermarket_complete.png)
+  ![Screenshot showing complete deployment](./img/contoso_Hypermarket_complete.png)
 
   ![Screenshot showing Agora resources in Azure portal](./img/rg_complete.png)
 
 ## Next steps
 
-Once deployment is complete its time to start experimenting with the various scenarios under the “Contoso HyperMarket” experience, starting with the [“Data pipeline and reporting across cloud and edge for Contoso HyperMarket”](../data_pipeline/).
+Once deployment is complete its time to start experimenting with the various scenarios under the “Contoso Hypermarket” experience, starting with the [“Data pipeline and reporting across cloud and edge for Contoso Hypermarket”](../data_pipeline/).
