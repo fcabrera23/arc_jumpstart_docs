@@ -16,6 +16,8 @@ Occasionally deployments of Jumpstart Agora Contoso Hypermarket may fail at vari
 - Not enough vCPU quota available in your target Azure region - check vCPU quota and ensure you have at least 32 available vCPU.
   - You can use the command *`az vm list-usage --location <your location> --output table`* to check your available vCPU quota.
 
+    ![Screenshot showing capacity constraints error](./img/capacity_constraints.png)
+
     ![Screenshot showing az vm list-usage](./img/az_vm_list_usage.png)
 
 - Target Azure region doesn't support all required Azure services - ensure you are running Agora in one of the supported regions listed in the [deployment guide](../deployment/).
