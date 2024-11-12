@@ -71,19 +71,28 @@ This hybrid approach—using OpenAI Whisper locally and Azure AI Speech when nec
 1. **Access the Interface**: The users accesses the **Contoso Hypermarket** interface on a local workstation or device.
 1. **Access Jumpstart Cerebral**: The users clicks the Jumpstart Cerebral logo in the right-side part of the header to open the Cerebral chat panel.
 
-    ![Click on Jumpstart Cerebral logo](./img/placeholder.jpg)
+    ![Click on Jumpstart Cerebral logo](./img/init_header.png)
 
 1. **Activate Recording**: The user clicks the "Record" button in the UI to begin capturing audio input. If **Microphone Acess** was not granted before, the user needs to accpet enabling this access.
 
-    ![Higlihted Record button and Browser permission enablement](./img/placeholder.jpg)
+    ![Higlihted Record button and Browser permission enablement](./img/start_recording.png)
+
+1. **Stop Recording**: The user clicks the "Stop" button to end the audio capture. The recorded audio is then processed for checks and transcriptions.
+
+    ![Higlihted Record Stop button](./img/stop_record.png)
 
 1. **STT Process**: The captured audio is processed, checked for voice content, and then sent through the STT connector.
 
+    ![Higlihted audio created](./img/stop_record.png)
+
 1. The user can play the recorded audio for better understanding
 
-    ![Show how to click on audio sent](./img/placeholder.jpg)
+    ![Show how to click on audio sent](./img/audio_created.png)
 
 1. **Real-time Response**: The transcribed text is displayed in the main interface for immediate feedback.
+
+    ![Transcribed question](./img/transcription.png)
+
 1. **Process Question Event**: The question is submitted to the Cerebral API, triggering further analysis and response generation.
 
 
