@@ -5,7 +5,7 @@ title: Kubernetes observability
 linkTitle: Kubernetes observability
 ---
 
-# Infrastructure observability Arc-enabled Kubernetes
+# Infrastructure observability for Arc-enabled Kubernetes
 
 ## Overview
 
