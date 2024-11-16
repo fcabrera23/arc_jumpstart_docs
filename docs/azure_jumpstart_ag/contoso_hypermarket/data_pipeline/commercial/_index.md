@@ -229,7 +229,7 @@ The [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-enginee
 
 - In the Microsoft Fabric workspace locate notebook and open to view notebook in the Edge browser.
 
-  ![Screenshot showing Microsoft Fabric notebook](./img/hypermarket-locate-fabric-notebook.png)
+  ![Screenshot showing Microsoft Fabric Notebook](./img/hypermarket-locate-fabric-notebook.png)
 
 - Notebook is pre-configured to connect to the KQL Database within the workspace.
 
