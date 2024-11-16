@@ -245,4 +245,4 @@ The [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-enginee
 
 ## Next steps
 
-Now that you have completed the data pipeline scenarios, it's time to continue to the next scenario, ["Predictive Analytics using Microsoft 365 Copilot"](../../predictive_analytics/).
+Now that you have completed the data pipeline scenarios, it's time to continue to the next scenario, ["Predictive analytics using Microsoft 365 Copilot"](../../predictive_analytics/).
