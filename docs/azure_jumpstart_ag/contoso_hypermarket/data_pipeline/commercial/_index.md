@@ -233,7 +233,7 @@ The [Microsoft Fabric notebooks](https://learn.microsoft.com/fabric/data-enginee
 
 - Notebook is pre-configured to connect to the KQL Database within the workspace.
 
-  ![Screenshot showing Microsoft Fabric notebook](./img/hypermarket-fabric-notebook-overview.png)
+  ![Screenshot showing Microsoft Fabric Notebook](./img/hypermarket-fabric-notebook-overview.png)
 
   ![Screenshot showing Notebook with KQL Database configuration](./img/hypermarket-fabric-notebook-kql.png)
 
